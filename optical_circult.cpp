@@ -1,7 +1,7 @@
 /* optical circuit by 0x4015
    sound track
 
-   How to play: g++ optical_circuit.cpp && ./a.out | aplay -f cd
+   How to play: g++ optical_circuit.cpp && ./a.out | aplay -f dat
 */
  
 #include <cmath>
@@ -77,7 +77,7 @@ void shader_main() {
 }
 
 int main() {
-    for (gl_VertexID = 0; gl_VertexID < 44100 * (132); gl_VertexID++) {
+    for (gl_VertexID = 0; gl_VertexID < 48000 * (132); gl_VertexID++) {
             shader_main();
             short out[2] = {A.x * 32768, A.y * 32768};
             fwrite(&out, sizeof out, 1, stdout);
